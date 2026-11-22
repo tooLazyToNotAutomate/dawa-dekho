@@ -303,3 +303,5 @@ body:not(.dash) .toast{bottom:84px;font-size:14px}
   body:not(.dash){background:#DCE5E8}
   body:not(.dash) .app{box-shadow:0 0 0 1px rgba(31,52,80,.08),0 10px 40px rgba(31,52,80,.14)}
 }
+.demo-box{line-height:2;color:var(--ink)}
+.demo-box code{margin-right:2px}

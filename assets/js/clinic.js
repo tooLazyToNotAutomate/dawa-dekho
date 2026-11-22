@@ -32,6 +32,7 @@ const langSeg = () => `<div class="seg" role="group" aria-label="${t('language')
 
 /* ---------- login ---------- */
 function loginView() {
+  const names = db().clinics.map((c) => `<code>${esc(c.login)}</code>`).join(' ');
   return `<div class="loginbox">
     <div class="brand" style="margin-bottom:18px"><div class="brand__logo" style="background:var(--navy)">${icon('hospital')}</div>
       <div><div class="brand__n" style="color:var(--navy)">${esc(APP.name)}</div><div class="brand__t muted">${t('dash.for')}</div></div></div>
@@ -41,7 +42,7 @@ function loginView() {
       <label class="field"><span class="label">${t('login.pass')}</span><input class="input" type="password" data-draft="l.pass" value="${fv('l.pass')}" autocomplete="current-password"></label>
       ${S.err ? `<div class="err" role="alert">${esc(S.err)}</div>` : ''}<div class="sp"></div>
       <button class="btn btn--primary btn--block" data-act="login">${icon('lock')} ${t('login.go')}</button>
-      <div class="demo-box"><code>${esc(db().clinics[0].login)}</code> / <code>${esc(APP.demoPassword)}</code></div>
+      <div class="demo-box">${t('login.demo')} ${names}<br>${t('login.pass')}: <code>${esc(APP.demoPassword)}</code></div>
     </section><div class="sp"></div>${langSeg()}</div>`;
 }
 
