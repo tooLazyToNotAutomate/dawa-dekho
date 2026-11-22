@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dawa Dekho – Live demo</title>
+<link rel="icon" href="assets/icons/icon-192.png">
+<style>
+  *{box-sizing:border-box;margin:0}
+  html,body{height:100%;overflow:hidden}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#E8EEEF;color:#22303C;display:flex;flex-direction:column}
+  header{flex:none;background:#1F3450;color:#fff;padding:10px 22px;display:flex;gap:12px;align-items:center}
+  header h1{font-size:18px;line-height:1.3}
+  header .sp{flex:1}
+  .btn{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:10px;border:2px solid rgba(255,255,255,.35);color:#fff;background:transparent;font:600 14px inherit;cursor:pointer;text-decoration:none;white-space:nowrap}
+  .btn:hover{background:rgba(255,255,255,.12)}
+  /* The stage keeps a fixed design size and is scaled as a whole to fit the window,
+     so text and layout are never squeezed and the page never scrolls. */
+  .view{flex:1;min-height:0;position:relative;overflow:hidden}
+  .stage{position:absolute;left:50%;top:0;width:1440px;height:860px;display:flex;gap:24px;align-items:flex-start;justify-content:center;transform-origin:top center;padding-top:14px}
+  .col{display:flex;flex-direction:column;gap:8px;align-items:center}
+  .col span{font-weight:700;font-size:14px;color:#1F3450}
+  .dash{width:980px}
+  .dash iframe{width:100%;height:812px;border:0;border-radius:14px;background:#fff;box-shadow:0 14px 40px rgba(31,52,80,.18)}
+  .phone{width:404px;height:812px;flex:none;border-radius:44px;background:#0F1B2A;padding:12px;box-shadow:0 14px 40px rgba(31,52,80,.3)}
+  .phone iframe{width:100%;height:100%;border:0;border-radius:34px;background:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>Dawa Dekho – Live demo</h1>
+  <span class="sp"></span>
+  <a class="btn" href="index.html" target="_blank" rel="noopener">Open patient app</a>
+  <a class="btn" href="clinic/index.html" target="_blank" rel="noopener">Open dashboard</a>
+  <button class="btn" id="reset">Reset demo</button>
+</header>
+<div class="view"><main class="stage" id="stage">
+  <div class="col dash"><span>Clinic dashboard (staff)</span><iframe src="clinic/index.html" title="Clinic dashboard"></iframe></div>
+  <div class="col"><span>Patient app (phone)</span><div class="phone"><iframe src="index.html" title="Patient app"></iframe></div></div>
+</main></div>
+<script>
+  const stage = document.getElementById('stage'), view = stage.parentElement;
+  function fit() {
+    const s = Math.min(1, view.clientWidth / 1440, view.clientHeight / 860);
+    stage.style.transform = `translateX(-50%) scale(${s})`;
+  }
+  addEventListener('resize', fit); fit();
+  document.getElementById('reset').onclick = () => {
+    Object.keys(localStorage).filter(k => k.startsWith('dd.')).forEach(k => localStorage.removeItem(k));
+    document.querySelectorAll('iframe').forEach(f => f.contentWindow.location.reload());
+  };
+</script>
+</body>
+</html>
