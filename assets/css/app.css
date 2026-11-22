@@ -305,3 +305,26 @@ body:not(.dash) .toast{bottom:84px;font-size:14px}
 }
 .demo-box{line-height:2;color:var(--ink)}
 .demo-box code{margin-right:2px}
+
+/* ===== clinic login: split screen ===== */
+.login{display:flex;min-height:100vh}
+.login__side{flex:1;background:linear-gradient(160deg,#1F3450 0%,#183044 55%,#1E7E73 140%);color:#fff;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between}
+.login__side .brand__n{font-size:24px}
+.login__pitch{max-width:440px}
+.login__pitch h2{font-size:32px;line-height:1.2;font-weight:700;margin-bottom:28px}
+html[lang=te] .login__pitch h2{line-height:1.45}
+.login__pitch ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:16px}
+.login__pitch li{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;line-height:1.4}
+.login__pitch li span{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.12);display:grid;place-items:center;flex:none}
+.login__form{flex:1;display:flex;align-items:center;justify-content:center;padding:32px;background:#fff}
+.login__box{width:100%;max-width:400px}
+.login__box .h1{font-size:28px}
+.login__box .input{min-height:50px}
+.login__mini{display:none;margin-bottom:22px}
+.login__box .demo-box{margin-top:16px}
+@media (max-width:760px){
+  .login{flex-direction:column}
+  .login__side{display:none}
+  .login__form{background:var(--bg);align-items:flex-start;padding:36px 20px}
+  .login__mini{display:flex}
+}

@@ -48,7 +48,7 @@ const en = {
   about: "A prototype of a live status tracker for Basthi Dawakhanas. Clinic details and status shown here are demo data.",
 
   // clinic dashboard
-  "dash.for": "Clinic dashboard", "login.title": "Clinic login", "login.user": "Username", "login.pass": "Password", "login.go": "Log in",
+  "dash.for": "Clinic dashboard", "login.pitch": "Keep your patients informed, without the phone calls.", "login.f1": "Open, closed and doctor status in one tap", "login.f2": "Medicine stock that patients see instantly", "login.f3": "Bookings and patient questions in one inbox", "login.title": "Clinic login", "login.user": "Username", "login.pass": "Password", "login.go": "Log in",
   "login.demo": "Demo usernames:", "login.err": "Wrong username or password.", logout: "Log out",
   "dn.today": "Today", "dn.stock": "Stock", "dn.appts": "Bookings", "dn.queries": "Questions", "dn.settings": "Settings",
   "today.title": "Today", "tog.open": "Clinic open", "tog.open.on": "Open for patients", "tog.open.off": "Closed today",
@@ -113,7 +113,7 @@ const te = {
   install: "యాప్ ఇన్‌స్టాల్ చేయండి", "install.hint": "చిట్కా: బ్రౌజర్ మెనూలో 'హోమ్ స్క్రీన్‌కు జోడించు' ఎంచుకోండి.",
   about: "బస్తీ దవాఖానాల లైవ్ స్టేటస్ ట్రాకర్ నమూనా. ఇక్కడ చూపే క్లినిక్ వివరాలు, స్థితి డెమో మాత్రమే.",
 
-  "dash.for": "క్లినిక్ డాష్‌బోర్డ్", "login.title": "క్లినిక్ లాగిన్", "login.user": "యూజర్ నేమ్", "login.pass": "పాస్‌వర్డ్", "login.go": "లాగిన్",
+  "dash.for": "క్లినిక్ డాష్‌బోర్డ్", "login.pitch": "ఫోన్ కాల్స్ లేకుండానే రోగులకు సమాచారం అందించండి.", "login.f1": "ఒక్క టాప్‌తో తెరిచి/మూసి, డాక్టర్ స్థితి", "login.f2": "రోగులకు వెంటనే కనిపించే మందుల స్టాక్", "login.f3": "బుకింగ్‌లు, ప్రశ్నలు ఒకే ఇన్‌బాక్స్‌లో", "login.title": "క్లినిక్ లాగిన్", "login.user": "యూజర్ నేమ్", "login.pass": "పాస్‌వర్డ్", "login.go": "లాగిన్",
   "login.demo": "డెమో యూజర్ నేమ్‌లు:", "login.err": "యూజర్ నేమ్ లేదా పాస్‌వర్డ్ తప్పు.", logout: "లాగౌట్",
   "dn.today": "ఈరోజు", "dn.stock": "స్టాక్", "dn.appts": "బుకింగ్‌లు", "dn.queries": "ప్రశ్నలు", "dn.settings": "సెట్టింగ్స్",
   "today.title": "ఈరోజు", "tog.open": "క్లినిక్ తెరిచి ఉంది", "tog.open.on": "రోగులకు తెరిచి ఉంది", "tog.open.off": "ఈరోజు మూసి ఉంది",

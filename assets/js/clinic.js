@@ -33,17 +33,30 @@ const langSeg = () => `<div class="seg" role="group" aria-label="${t('language')
 /* ---------- login ---------- */
 function loginView() {
   const names = db().clinics.map((c) => `<code>${esc(c.login)}</code>`).join(' ');
-  return `<div class="loginbox">
-    <div class="brand" style="margin-bottom:18px"><div class="brand__logo" style="background:var(--navy)">${icon('hospital')}</div>
-      <div><div class="brand__n" style="color:var(--navy)">${esc(APP.name)}</div><div class="brand__t muted">${t('dash.for')}</div></div></div>
-    <section class="card">
-      <h1 class="h1">${t('login.title')}</h1><div class="sp"></div>
-      <label class="field"><span class="label">${t('login.user')}</span><input class="input" data-draft="l.user" value="${fv('l.user')}" autocapitalize="none" autocomplete="username"></label><div class="sp-s"></div>
-      <label class="field"><span class="label">${t('login.pass')}</span><input class="input" type="password" data-draft="l.pass" value="${fv('l.pass')}" autocomplete="current-password"></label>
-      ${S.err ? `<div class="err" role="alert">${esc(S.err)}</div>` : ''}<div class="sp"></div>
-      <button class="btn btn--primary btn--block" data-act="login">${icon('lock')} ${t('login.go')}</button>
-      <div class="demo-box">${t('login.demo')} ${names}<br>${t('login.pass')}: <code>${esc(APP.demoPassword)}</code></div>
-    </section><div class="sp"></div>${langSeg()}</div>`;
+  const feats = [['toggle-right', 'login.f1'], ['package', 'login.f2'], ['inbox', 'login.f3']];
+  return `<div class="login">
+    <aside class="login__side">
+      <div class="brand"><div class="brand__logo">${icon('hospital')}</div>
+        <div><div class="brand__n">${esc(APP.name)}</div><div class="brand__t">${esc(APP.tagline[S.lang])}</div></div></div>
+      <div class="login__pitch">
+        <h2>${t('login.pitch')}</h2>
+        <ul>${feats.map(([ic, k]) => `<li><span>${icon(ic === 'toggle-right' ? 'layout-dashboard' : ic)}</span>${t(k)}</li>`).join('')}</ul>
+      </div>
+    </aside>
+    <section class="login__form">
+      <div class="login__box">
+        <div class="brand login__mini"><div class="brand__logo" style="background:var(--navy)">${icon('hospital')}</div>
+          <div class="brand__n" style="color:var(--navy)">${esc(APP.name)}</div></div>
+        <h1 class="h1">${t('login.title')}</h1><div class="muted" style="margin-top:2px">${t('dash.for')}</div><div class="sp"></div>
+        <label class="field"><span class="label">${t('login.user')}</span><input class="input" data-draft="l.user" value="${fv('l.user')}" autocapitalize="none" autocomplete="username"></label><div class="sp-s"></div>
+        <label class="field"><span class="label">${t('login.pass')}</span><input class="input" type="password" data-draft="l.pass" value="${fv('l.pass')}" autocomplete="current-password"></label>
+        ${S.err ? `<div class="err" role="alert">${esc(S.err)}</div>` : ''}<div class="sp"></div>
+        <button class="btn btn--primary btn--block" data-act="login">${icon('lock')} ${t('login.go')}</button>
+        <div class="demo-box">${t('login.demo')} ${names}<br>${t('login.pass')}: <code>${esc(APP.demoPassword)}</code></div>
+        <div class="sp"></div>${langSeg()}
+      </div>
+    </section>
+  </div>`;
 }
 
 /* ---------- shell ---------- */
